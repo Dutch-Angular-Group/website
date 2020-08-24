@@ -119,6 +119,43 @@
           }
         }
       }
+    },
+    "scully-plugin-meetup": {
+      "root": "libs/scully-plugin-meetup",
+      "sourceRoot": "libs/scully-plugin-meetup/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/scully-plugin-meetup/tsconfig.lib.json",
+              "libs/scully-plugin-meetup/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/scully-plugin-meetup/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/scully-plugin-meetup/jest.config.js",
+            "tsConfig": "libs/scully-plugin-meetup/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/scully-plugin-meetup",
+            "tsConfig": "libs/scully-plugin-meetup/tsconfig.lib.json",
+            "packageJson": "libs/scully-plugin-meetup/package.json",
+            "main": "libs/scully-plugin-meetup/src/index.ts",
+            "assets": ["libs/scully-plugin-meetup/*.md"]
+          }
+        }
+      }
     }
   },
   "cli": {

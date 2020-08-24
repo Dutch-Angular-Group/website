@@ -52,6 +52,7 @@
     "@angular/language-service": "^10.0.0",
     "@nrwl/cypress": "10.0.12",
     "@nrwl/jest": "10.0.12",
+    "@nrwl/node": "^10.1.0",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "10.0.12",
     "@scullyio/init": "^1.0.0-beta.0",
@@ -67,6 +68,10 @@
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~3.9.3"
+    "typescript": "~3.9.3",
+    "@nrwl/eslint-plugin-nx": "10.0.12",
+    "@typescript-eslint/parser": "2.19.2",
+    "@typescript-eslint/eslint-plugin": "2.19.2",
+    "eslint-config-prettier": "6.0.0"
   }
 }
