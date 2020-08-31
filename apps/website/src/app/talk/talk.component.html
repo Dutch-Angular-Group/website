@@ -1,0 +1,5 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <h1>{{ vm.data.name }}</h1>
+  <sub>{{ vm.data.local_date }} || {{ vm.data.status }} </sub>
+  <main [innerHTML]="vm.data.description"></main>
+</ng-container>

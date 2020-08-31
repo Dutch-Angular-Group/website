@@ -1,0 +1,6 @@
+<p>talks works!</p>
+<ul>
+  <li *ngFor="let route of routes$ | async">
+    <a [routerLink]="route.route">{{ route.title }}({{ route.date | date }})</a>
+  </li>
+</ul>

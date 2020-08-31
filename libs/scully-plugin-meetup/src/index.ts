@@ -1,1 +1,1 @@
-export * from './lib/scully-plugin-meetup';
+export { meetupPlugin } from './lib/scully-plugin-meetup';
