@@ -1,6 +1,13 @@
 <p>talks works!</p>
+<h1>Upcoming Events</h1>
 <ul>
-  <li *ngFor="let route of routes$ | async">
+  <li *ngFor="let route of routesFuture">
+    <a [routerLink]="route.route">{{ route.title }}({{ route.date | date }})</a>
+  </li>
+</ul>
+<h1>Past Events</h1>
+<ul>
+  <li *ngFor="let route of routesPast">
     <a [routerLink]="route.route">{{ route.title }}({{ route.date | date }})</a>
   </li>
 </ul>
