@@ -68,7 +68,7 @@ export interface Meta {}
 @Component({
   selector: 'dutch-angular-group-talk',
   templateUrl: './talk.component.html',
-  styleUrls: ['./talk.component.css'],
+  styleUrls: ['./talk.component.scss'],
 })
 export class TalkComponent implements OnInit {
   vm$: Observable<any>;

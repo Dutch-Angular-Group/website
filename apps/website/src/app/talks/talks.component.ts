@@ -7,7 +7,7 @@ const today = new Date();
 @Component({
   selector: 'dutch-angular-group-talks',
   templateUrl: './talks.component.html',
-  styleUrls: ['./talks.component.css'],
+  styleUrls: ['./talks.component.scss'],
 })
 export class TalksComponent implements OnInit {
   routesFuture: ScullyRoute[];
