@@ -1,0 +1,35 @@
+.social-links {
+  a {
+    color: #ffffff;
+    font-size: 1.7em;
+    padding: 10px;
+  }
+
+  &.light > a {
+    color: #ffffff;
+
+    &:hover {
+      color: #dd0031;
+    }
+  }
+
+  &.dark > a {
+    color: #000000;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &.medium-size > a {
+    font-size: 1.7em;
+  }
+
+  &.big-size > a {
+    font-size: 2.3em;
+  }
+
+  &.text-center {
+    text-align: center;
+  }
+}
