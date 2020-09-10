@@ -1,12 +1,14 @@
-<h1>Upcoming Events</h1>
-<ul>
-  <li *ngFor="let route of routesFuture">
-    <a [routerLink]="route.route">{{ route.title }}({{ route.date | date }})</a>
-  </li>
-</ul>
-<h1>Past Events</h1>
-<ul>
-  <li *ngFor="let route of routesPast">
-    <a [routerLink]="route.route">{{ route.title }}({{ route.date | date }})</a>
-  </li>
-</ul>
+<div class="lg:container lg:mx-auto px-8">
+  <div class="lg:container lg:mx-auto px-8">
+    <h1 class="text-black font-bold text-3xl">Upcoming Events</h1>
+    <dutch-angular-group-event-item *ngFor="let route of routesFuture" [routerLink]="route.route"
+      [time]="route.local_time" [title]="route.title" [date]="route.date | date"></dutch-angular-group-event-item>
+
+  </div>
+  <div class="lg:container lg:mx-auto px-8 pt-8">
+    <h1 class="text-black font-bold text-3xl">Past Events</h1>
+    <dutch-angular-group-event-item color="gray" *ngFor="let route of routesPast" [routerLink]="route.route"
+      [time]="route.local_time" [title]="route.title" [date]="route.date | date">
+    </dutch-angular-group-event-item>
+  </div>
+</div>

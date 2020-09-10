@@ -10,8 +10,14 @@ import { HeaderComponent } from './header/header.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { FooterComponent } from './footer/footer.component';
 import '@angular/common/locales/global/nl';
+import { EventItemComponent } from './event-item/event-item.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SocialMediaComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SocialMediaComponent,
+    FooterComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -23,8 +29,8 @@ import '@angular/common/locales/global/nl';
   providers: [
     {
       provide: LOCALE_ID,
-      useValue: 'nl-NL'
-    }
+      useValue: 'nl-NL',
+    },
   ],
   bootstrap: [AppComponent],
 })

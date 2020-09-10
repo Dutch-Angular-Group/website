@@ -1,8 +1,14 @@
 <section class="container">
   <dutch-angular-group-header></dutch-angular-group-header>
-  <router-outlet></router-outlet>
+  <section class="box-border">
+    <router-outlet></router-outlet>
+  </section>
   <section class="follow-us">
-    <dutch-angular-group-social-media [light]="false" [big]="true" [center]="true"></dutch-angular-group-social-media>
+    <dutch-angular-group-social-media
+      [light]="false"
+      [big]="true"
+      [center]="true"
+    ></dutch-angular-group-social-media>
   </section>
   <section>
     <dutch-angular-group-footer></dutch-angular-group-footer>

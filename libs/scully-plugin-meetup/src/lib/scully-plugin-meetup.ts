@@ -8,7 +8,12 @@ export const meetupPlugin = async (route, config) => {
   for (let item of list) {
     handledRoutes.push({
       route: createPath(item.id),
-      data: { title: item.name, date: new Date(item.time), status: item.status },
+      data: {
+        title: item.name,
+        date: new Date(item.time),
+        status: item.status,
+        local_time: item.local_time,
+      },
     });
   }
   return handledRoutes.sort((a, b) => (a.date < b.date ? 1 : -1));

@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TalksRoutingModule } from './talks-routing.module';
 import { TalksComponent } from './talks.component';
-
+import { EventItemModule } from '../event-item/event-item.module';
 
 @NgModule({
   declarations: [TalksComponent],
-  imports: [
-    CommonModule,
-    TalksRoutingModule
-  ]
+  imports: [CommonModule, TalksRoutingModule, EventItemModule],
 })
-export class TalksModule { }
+export class TalksModule {}

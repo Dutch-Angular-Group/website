@@ -1,5 +1,4 @@
-import { Component, Inject, inject, LOCALE_ID, OnInit } from '@angular/core';
-import { formatDate } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { map } from 'rxjs/operators';
 const regex = RegExp('/talks/[0-9]*');
@@ -12,8 +11,7 @@ const today = new Date();
 export class TalksComponent implements OnInit {
   routesFuture: ScullyRoute[];
   routesPast: ScullyRoute[];
-  constructor(public scully: ScullyRoutesService, @Inject(LOCALE_ID) id: string) {
-    console.error(id);
+  constructor(public scully: ScullyRoutesService) {
     this.scully.allRoutes$
       .pipe(map((routes) => routes.filter((route) => regex.test(route.route))))
       .subscribe((routes) => {
