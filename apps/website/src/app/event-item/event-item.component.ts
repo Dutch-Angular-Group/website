@@ -6,17 +6,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./event-item.component.scss'],
 })
 export class EventItemComponent implements OnInit {
-  public _color = 'red';
+  public _status = 'white';
   @Input() time: string;
   @Input() date: string;
   @Input() title: string;
+  @Input() online: boolean;
+  @Input() attendees: string;
+  @Input() link: string;
   @Input()
-  public set color(v: 'red' | 'gray') {
-    if (v) {
-      this._color = v;
+  public set status(v: 'upcoming' | 'past') {
+    if (v === 'past') {
+      this._status = 'gray';
     }
   }
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

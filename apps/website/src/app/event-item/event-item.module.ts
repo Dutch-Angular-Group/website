@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { EventItemComponent } from './event-item.component';
 
 @NgModule({
-  imports: [],
+  imports: [CommonModule],
   exports: [EventItemComponent],
   declarations: [EventItemComponent],
   providers: [],

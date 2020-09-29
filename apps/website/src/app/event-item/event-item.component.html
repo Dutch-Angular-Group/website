@@ -1,19 +1,22 @@
-<div class="sm:flex shadow rounded-lg border border-gray-400">
-  <div class="bg-{{
-      _color
-    }}-600 rounded-lg lg:w-2/12 py-4 block h-full shadow-inner">
-    <div class="text-center tracking-wide">
-      <div class="text-white font-bold text-3xl">{{ date }}</div>
-    </div>
-  </div>
-  <div class="w-full lg:w-11/12 xl:w-full px-1 bg-white py-5 lg:px-2 lg:py-2 tracking-wide">
-    <div class="flex flex-row lg:justify-start justify-center">
-      <div class="text-gray-700 font-medium text-sm text-center lg:text-left px-2">
-        <i class="far fa-clock"></i> {{ time }}
+<article class="h-3/4 flex mb-10 rounded bg-{{_status}}-300 shadow-lg p-6">
+  <div class="w-full sm:w-3/4 flex flex-col justify-between mr-4">
+    <div class="w-full text-justify">
+      <a class="hover:underline" [href]="link">
+        <h1
+          class="text-xl tracking-wide sm:tracking-normal  text-left sm:text-3xl font-semibold leading-tight text-left">
+          {{ title }}
+        </h1>
+      </a>
+      <p class="pt-1 sm:pb-2 pb-5 text-gray-700 sm:text-base text-sm sm:text-left">
+        Attendees: {{attendees}}
+      </p>
+      <div class="sm:block flex justify-start">
+        <a class="bg-red-600 hover:no-underline hover:text-white px-3 py-2 rounded text-blue-100 hover:bg-blue-700 hover:shadow"
+          [href]="link">Read more →</a>
       </div>
     </div>
-    <div class="font-semibold text-gray-800 text-2xl text-center lg:text-left px-2">
-      {{ title }}
+    <div class="text-sm text-gray-500 mt-6">
+      -- Published: {{ date }} - {{ time }} --
     </div>
   </div>
-</div>
+</article>

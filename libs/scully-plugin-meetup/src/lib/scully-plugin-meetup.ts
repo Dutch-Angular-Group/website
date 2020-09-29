@@ -12,7 +12,10 @@ export const meetupPlugin = async (route, config) => {
         title: item.name,
         date: new Date(item.time),
         status: item.status,
+        yes_rsvp_count: item.yes_rsvp_count,
+        is_online_event: item.is_online_event,
         local_time: item.local_time,
+        link: item.link,
       },
     });
   }
