@@ -12,5 +12,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  checkLink(link) {
+    return location.pathname.includes(link);
+  }
 }

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./event-item.component.scss'],
 })
 export class EventItemComponent implements OnInit {
-  public _status = 'white';
+  public _status = 'green';
   @Input() time: string;
   @Input() date: string;
   @Input() title: string;
