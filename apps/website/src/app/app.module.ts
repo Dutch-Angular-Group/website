@@ -1,28 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
-import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './header/header.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
-import { FooterComponent } from './footer/footer.component';
 import '@angular/common/locales/global/nl';
-import { EventItemComponent } from './event-item/event-item.component';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FooterModule } from './components/footer/footer.module';
+import { HeaderModule } from './components/header/header.module';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SocialMediaComponent,
-    FooterComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     HttpClientJsonpModule,
     BrowserModule,
+    HeaderModule,
+    FooterModule,
+
     ScullyLibModule,
     AppRoutingModule,
   ],
@@ -34,4 +32,4 @@ import { EventItemComponent } from './event-item/event-item.component';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
