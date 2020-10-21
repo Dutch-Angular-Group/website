@@ -89,9 +89,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/website/jest.config.js",
-            "tsConfig": "apps/website/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/website/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       }
@@ -130,21 +128,22 @@
       "schematics": {},
       "architect": {
         "lint": {
-          "builder": "@nrwl/linter:lint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "libs/scully-plugin-meetup/tsconfig.lib.json",
-              "libs/scully-plugin-meetup/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/scully-plugin-meetup/**/*"]
+            "lintFilePatterns": [
+              "libs/scully-plugin-meetup/**/*.ts",
+              "libs/scully-plugin-meetup/**/*.spec.ts",
+              "libs/scully-plugin-meetup/**/*.spec.tsx",
+              "libs/scully-plugin-meetup/**/*.spec.js",
+              "libs/scully-plugin-meetup/**/*.spec.jsx",
+              "libs/scully-plugin-meetup/**/*.d.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/scully-plugin-meetup/jest.config.js",
-            "tsConfig": "libs/scully-plugin-meetup/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
