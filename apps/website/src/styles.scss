@@ -2,10 +2,40 @@
 @import 'tailwindcss/utilities';
 
 body {
-  font-family: 'Source Sans Pro', serif;
+  font-family: 'Lexend Exa', sans-serif;
   margin: 0;
   padding: 0;
 }
 .active {
   color: white;
+}
+.page-content {
+  padding: 0.8rem;
+
+  h1 {
+    margin-bottom: 24px;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    opacity: 0.9;
+  }
+
+  h2 {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  p {
+    margin-bottom: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+  }
+
+  .content {
+    padding: 34px calc(18rem + 16px + 16px) 0 24px;
+  }
 }

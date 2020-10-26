@@ -43,7 +43,7 @@
     "@ngneat/tailwind": "^1.0.1",
     "@nrwl/angular": "10.3.0-rc.4",
     "@scullyio/ng-lib": "^1.0.0",
-    "@scullyio/scully": "^1.0.0",
+    "@scullyio/scully": "^1.0.3",
     "rxjs": "~6.5.5",
     "zone.js": "^0.10.2"
   },
