@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
+import { GithubCornerComponent } from './components/github-corner/github-corner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    GithubCornerComponent,
   ],
   imports: [
     CommonModule,
