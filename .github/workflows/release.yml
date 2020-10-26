@@ -9,12 +9,31 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/checkout@v2
         with:
-          node-version: '12.x'
-      - run: npm i
-      - run: npm run symlinks
-      - run: npx nx run-many --target=build --all --prod
-      - run: npx scully --scanRoutes
+          persist-credentials: false
+      - uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Dependencies
+        run: npm install --frozen-lockfile
+      - name: Symlink dist 🔗
+        run: npm run symlinks
+      - name: Build it 👷🏻‍♂️
+        run: npm run build
+      - name: Scully it ✨
+        run: npm run scully -- --scanRoutes --prod
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: ${{ secrets.DEPLOY_BRANCH }} # The branch the action should deploy to.
+          FOLDER: dist/static # The folder the action should deploy.
+          REPOSITORY_NAME: ${{ secrets.REPO }} # The repo the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
