@@ -28,7 +28,7 @@
     "help": "nx help",
     "scully": "scully",
     "scully:serve": "scully serve",
-    "symlinks": "npx symlink-dir ./dist/libs ./node_modules/@dutchangulargroup"
+    "symlinks": "ls -ltr ./dist/ && npx symlink-dir ./dist/libs ./node_modules/@dutchangulargroup"
   },
   "private": true,
   "dependencies": {
@@ -58,7 +58,7 @@
     "@nrwl/eslint-plugin-nx": "10.3.0-rc.4",
     "@nrwl/jest": "10.3.0-rc.4",
     "@nrwl/node": "10.3.0-rc.4",
-    "@nrwl/nx-cloud": "latest",
+    "@nrwl/nx-cloud": "^10.1.7",
     "@nrwl/workspace": "10.3.0-rc.4",
     "@scullyio/init": "^1.0.0",
     "@scullyio/scully-plugin-critical-css": "0.0.2",

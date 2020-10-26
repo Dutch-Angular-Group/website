@@ -18,8 +18,13 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "MjI5ZjVlYjktYWNjZC00NTU1LTlkZWYtZDcyZmU3ZDRhOGZhfHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "accessToken": "ODhhOTkxZTctMDAyYy00MjJlLTliNmEtOGU4YWNjM2M5OTlhfHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -31,10 +36,14 @@
     },
     "website-e2e": {
       "tags": [],
-      "implicitDependencies": ["website"]
+      "implicitDependencies": [
+        "website"
+      ]
     },
     "scully-plugin-meetup": {
-      "tags": ["public"]
+      "tags": [
+        "public"
+      ]
     }
   }
 }
