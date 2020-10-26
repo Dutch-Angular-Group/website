@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { CodeOfConductComponent } from './code-of-conduct.component';
-
+import { DocsPageComponent } from './docs-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CodeOfConductComponent,
+    component: DocsPageComponent,
     children: [
-      { path: ':slug', component: CodeOfConductComponent },
-      { path: '**', component: CodeOfConductComponent },
+      { path: ':slug', component: DocsPageComponent },
+      { path: '**', component: DocsPageComponent },
     ],
   }
 ];
@@ -19,4 +18,4 @@ const routes: Routes = [
   imports: [ScullyLibModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CodeOfConductRoutingModule { }
+export class DocsPageRoutingModule { }
