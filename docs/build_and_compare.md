@@ -19,7 +19,7 @@ We could get bonus points if we would add the calculation and memory keys.
 
 #### 📹 Video 
 
-[![](http://img.youtube.com/vi/VK01Vgm5kH0/0.jpg)](http://www.youtube.com/watch?v=VK01Vgm5kH0 "")
+[![](https://img.youtube.com/vi/VK01Vgm5kH0/0.jpg)](https://www.youtube.com/watch?v=VK01Vgm5kH0 "")
 
 #### Created version
 
