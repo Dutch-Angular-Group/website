@@ -38,3 +38,5 @@ testem.log
 .DS_Store
 Thumbs.db
 scully.log
+scully.website.config.js
+.scully
