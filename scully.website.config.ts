@@ -8,9 +8,9 @@ import {
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
 import { MinifyHtml } from 'scully-plugin-minify-html';
 
-const defaultPostRenderers = [criticalCSS, 'seoHrefOptimise', MinifyHtml];
 export const GoogleAnalytics = 'googleAnalytics';
 registerPlugin('render', GoogleAnalytics, googleAnalyticsPlugin);
+const defaultPostRenderers = [criticalCSS, 'seoHrefOptimise', MinifyHtml,GoogleAnalytics];
 
 // Configurations
 
@@ -26,12 +26,9 @@ const minifyHtmlOptions = {
 
 setPluginConfig(MinifyHtml, 'render', minifyHtmlOptions);
 
-//Google
-// if (prod) {
-setPluginConfig(GoogleAnalytics, { globalSiteTag: 'G-ELV3JE2NHF' });
+//Googleanalytics
+setPluginConfig(GoogleAnalytics, { globalSiteTag: 'G-S66QSVVTFS' });
 
-// defaultPostRenderers.push(GoogleAnalytics);
-// }
 
 //ScullyConfig
 export const config: ScullyConfig = {
