@@ -24,11 +24,11 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
-        run: npm install --frozen-lockfile
-      - name: Build it 👷🏻‍♂️
-        run: npm run build
+        run: npm install
       - name: Symlink dist 🔗
         run: npm run symlinks
+      - name: Build it 👷🏻‍♂️
+        run: npm run build
       - name: Scully it ✨
         run: npm run scully -- --scanRoutes --prod
       - name: Deploy 🚀

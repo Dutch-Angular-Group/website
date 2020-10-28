@@ -1,9 +1,21 @@
 import '@dutchangulargroup/scully-plugin-meetup';
-import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
+import {
+  getMyConfig,
+  registerPlugin,
+  ScullyConfig,
+  setPluginConfig,
+} from '@scullyio/scully';
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
 import { MinifyHtml } from 'scully-plugin-minify-html';
 
-const defaultPostRenderers = [criticalCSS, 'seoHrefOptimise', MinifyHtml];
+export const GoogleAnalytics = 'googleAnalytics';
+registerPlugin('render', GoogleAnalytics, googleAnalyticsPlugin);
+const defaultPostRenderers = [
+  criticalCSS,
+  'seoHrefOptimise',
+  MinifyHtml,
+  GoogleAnalytics,
+];
 
 // Configurations
 
@@ -18,6 +30,9 @@ const minifyHtmlOptions = {
 };
 
 setPluginConfig(MinifyHtml, 'render', minifyHtmlOptions);
+
+//Googleanalytics
+setPluginConfig(GoogleAnalytics, { globalSiteTag: 'G-S66QSVVTFS' });
 
 //ScullyConfig
 export const config: ScullyConfig = {
@@ -42,3 +57,26 @@ export const config: ScullyConfig = {
     },
   },
 };
+
+async function googleAnalyticsPlugin(html: string): Promise<string> {
+  const googleAnalyticsConfig = getMyConfig(googleAnalyticsPlugin);
+
+  if (!googleAnalyticsConfig) {
+    throw new Error('googleAnalytics plugin missing Global Site Tag');
+  }
+  const siteTag: string = googleAnalyticsConfig['globalSiteTag'];
+
+  const googleAnalyticsScript = `
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${siteTag}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${siteTag}');
+</script>
+`;
+
+  return html.replace(/<\/head/i, `${googleAnalyticsScript}</head`);
+}
