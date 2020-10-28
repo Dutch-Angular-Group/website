@@ -1,30 +1,59 @@
-<header class="sm:shadow-lg items-center justify-between bg-gray-800 ">
-  <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6 w-full z-10 top-0">
+<header class="sm:shadow-lg items-center justify-between bg-gray-800">
+  <nav
+    class="flex items-center justify-between flex-wrap bg-gray-800 p-6 w-full z-10 top-0"
+  >
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <a class="text-white no-underline hover:text-white hover:no-underline" href="/docs/about">
-      <img alt="Logo of the Dutch Angular Group" src="/assets/dutch-angular-group.svg"
-        class="sm:inline hidden ml-5 h-12 w-12" />
-        <span class="text-2xl pl-2"><i class="em em-grinning"></i> Dutch Angular Group</span>
+      <a
+        class="text-white no-underline hover:text-white hover:no-underline"
+        href="/docs/about"
+      >
+        <img
+          alt="Logo of the Dutch Angular Group"
+          src="/assets/dutch-angular-group.svg"
+          class="sm:inline hidden ml-5 h-12 w-12"
+        />
+        <span class="text-2xl pl-2"
+          ><i class="em em-grinning"></i> Dutch Angular Group</span
+        >
       </a>
     </div>
 
-    <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block pt-6 lg:pt-0" id="nav-content">
+    <div
+      class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block pt-6 lg:pt-0"
+      id="nav-content"
+    >
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         <li class="mr-3">
-          <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-            [class.active]="checkLink('docs/about')" href="docs/about">About</a>
+          <a
+            class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+            [class.active]="checkLink('docs/about')"
+            href="docs/about"
+            >About</a
+          >
         </li>
         <li class="mr-3">
-          <a class="inline-block py-2 px-4  text-gray-600 no-underline" href="/talks"
-            [class.active]="checkLink('/talks')">Talks</a>
+          <a
+            class="inline-block py-2 px-4 text-gray-600 no-underline"
+            href="/talks"
+            [class.active]="checkLink('/talks')"
+            >Talks</a
+          >
         </li>
         <li class="mr-3">
-          <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-            [class.active]="checkLink('/docs/build_and_compare')" href="/docs/build_and_compare">Build and compare</a>
+          <a
+            class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+            [class.active]="checkLink('/docs/build_and_compare')"
+            href="/docs/build_and_compare"
+            >Build and compare</a
+          >
         </li>
         <li class="mr-3">
-          <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-            [class.active]="checkLink('docs/code_of_conduct')" href="docs/code_of_conduct">Code of Conduct</a>
+          <a
+            class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+            [class.active]="checkLink('docs/code_of_conduct')"
+            href="docs/code_of_conduct"
+            >Code of Conduct</a
+          >
         </li>
       </ul>
     </div>

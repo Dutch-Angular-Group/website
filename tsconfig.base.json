@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dutchangulargroup/scully-plugin-meetup": ["libs/scully-plugin-meetup/src/index.ts"]
+      "@dutchangulargroup/scully-plugin-meetup": [
+        "libs/scully-plugin-meetup/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

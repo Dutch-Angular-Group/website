@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TalksComponent } from './talks.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -18,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TalksRoutingModule { }
+export class TalksRoutingModule {}

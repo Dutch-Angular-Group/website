@@ -4,6 +4,6 @@ import { IdleMonitorService, ScullyRoutesService } from '@scullyio/ng-lib';
   selector: 'dutch-angular-group-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {}

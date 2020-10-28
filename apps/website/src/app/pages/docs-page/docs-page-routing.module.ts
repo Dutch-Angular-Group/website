@@ -11,11 +11,11 @@ const routes: Routes = [
       { path: ':slug', component: DocsPageComponent },
       { path: '**', component: DocsPageComponent },
     ],
-  }
+  },
 ];
 
 @NgModule({
   imports: [ScullyLibModule, RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DocsPageRoutingModule { }
+export class DocsPageRoutingModule {}

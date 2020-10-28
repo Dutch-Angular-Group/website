@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
     this.scully.allRoutes$
       .pipe(map((routes) => routes.filter((route) => regex.test(route.route))))
       .subscribe((routes) => {
-        this.routesFuture = routes.filter(route => route.status === 'upcoming')
-
+        this.routesFuture = routes.filter(
+          (route) => route.status === 'upcoming'
+        );
       });
   }
 
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

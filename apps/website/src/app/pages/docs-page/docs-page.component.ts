@@ -4,13 +4,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'dutch-angular-group-docs-page',
   templateUrl: './docs-page.component.html',
   styleUrls: ['./docs-page.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class DocsPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

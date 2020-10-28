@@ -1,6 +1,13 @@
 <main class="sm:mx-auto w-full xl:w-5/6 pt-5">
-  <dutch-angular-group-event-item *ngFor="let route of talks$ | async" [link]="route.link"
-    [time]="route.local_time" [attendees]="route.yes_rsvp_count" [online]="route.is_online_event" [title]="route.title"
-    [date]="route.date | date" [status]="route?.status">
+  <dutch-angular-group-event-item
+    *ngFor="let route of talks$ | async"
+    [link]="route.link"
+    [time]="route.local_time"
+    [attendees]="route.yes_rsvp_count"
+    [online]="route.is_online_event"
+    [title]="route.title"
+    [date]="route.date | date"
+    [status]="route?.status"
+  >
   </dutch-angular-group-event-item>
 </main>

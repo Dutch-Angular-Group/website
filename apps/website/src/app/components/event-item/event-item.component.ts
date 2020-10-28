@@ -19,7 +19,7 @@ export class EventItemComponent implements OnInit {
       this._status = 'gray';
     }
   }
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

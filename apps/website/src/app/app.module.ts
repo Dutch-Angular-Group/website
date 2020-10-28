@@ -11,10 +11,7 @@ import { HeaderModule } from './components/header/header.module';
 import { GithubCornerComponent } from './components/github-corner/github-corner.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GithubCornerComponent,
-  ],
+  declarations: [AppComponent, GithubCornerComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -34,4 +31,4 @@ import { GithubCornerComponent } from './components/github-corner/github-corner.
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

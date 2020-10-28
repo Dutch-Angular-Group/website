@@ -12,10 +12,10 @@ const today = new Date();
 export class TalksComponent implements OnInit {
   talks$: Observable<any>;
   constructor(public scully: ScullyRoutesService) {
-    this.talks$ = this.scully.allRoutes$
-      .pipe(map((routes) => routes.filter((route) => regex.test(route.route))))
-
+    this.talks$ = this.scully.allRoutes$.pipe(
+      map((routes) => routes.filter((route) => regex.test(route.route)))
+    );
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

@@ -3,18 +3,27 @@
     <div class="w-full text-justify">
       <a class="hover:underline" [href]="link">
         <h1
-          class="text-xl tracking-wide sm:tracking-normal  text-left sm:text-3xl font-semibold leading-tight text-left"
-          [ngClass]="{'text-gray-600': _status === 'gray'}">
+          class="text-xl tracking-wide sm:tracking-normal text-left sm:text-3xl font-semibold leading-tight text-left"
+          [ngClass]="{ 'text-gray-600': _status === 'gray' }"
+        >
           {{ title }}
         </h1>
       </a>
-      <p class="pt-1 sm:pb-2 pb-5 text-gray-700 sm:text-base text-sm sm:text-left">
-        Attendees: {{attendees}}
+      <p
+        class="pt-1 sm:pb-2 pb-5 text-gray-700 sm:text-base text-sm sm:text-left"
+      >
+        Attendees: {{ attendees }}
       </p>
       <div class="sm:block flex justify-start">
-        <a class=" hover:no-underline hover:text-white px-3 py-2 rounded text-blue-100 hover:bg-blue-700 hover:shadow"
-          [ngClass]="{'bg-red-600': _status === 'white','bg-gray-600':  _status !== 'white'}"
-          [href]=" link">Read more →</a>
+        <a
+          class="hover:no-underline hover:text-white px-3 py-2 rounded text-blue-100 hover:bg-blue-700 hover:shadow"
+          [ngClass]="{
+            'bg-red-600': _status === 'white',
+            'bg-gray-600': _status !== 'white'
+          }"
+          [href]="link"
+          >Read more →</a
+        >
       </div>
     </div>
     <div class="text-sm text-gray-500 mt-6">
