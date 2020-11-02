@@ -4,20 +4,19 @@ import {
   registerPlugin,
   ScullyConfig,
   setPluginConfig,
+  prod,
 } from '@scullyio/scully';
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
 import { MinifyHtml } from 'scully-plugin-minify-html';
 
+// Configurations
 export const GoogleAnalytics = 'googleAnalytics';
 registerPlugin('render', GoogleAnalytics, googleAnalyticsPlugin);
-const defaultPostRenderers = [
-  criticalCSS,
-  'seoHrefOptimise',
-  MinifyHtml,
-  GoogleAnalytics,
-];
 
-// Configurations
+const prodPostRenders = ['seoHrefOptimise', MinifyHtml, GoogleAnalytics];
+const defaultPostRenderers = prod
+  ? [...prodPostRenders, criticalCSS]
+  : [criticalCSS];
 
 // Markdown
 setPluginConfig('md', {});
@@ -44,8 +43,7 @@ export const config: ScullyConfig = {
     '/talks/:talkid': {
       type: 'meetup',
       talkid: {
-        url:
-          'https://api.meetup.com/Dutch-Angular-Group/events?page=100&status=past,upcoming',
+        name: 'Dutch-Angular-Group',
         property: 'id',
       },
     },

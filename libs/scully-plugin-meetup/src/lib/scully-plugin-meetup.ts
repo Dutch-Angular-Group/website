@@ -1,7 +1,16 @@
 import { httpGetJson, registerPlugin, routeSplit } from '@scullyio/scully';
+import { RouteConfig } from '@scullyio/scully/lib/routerPlugins';
 
-export const meetupPlugin = async (route, config) => {
-  const url = config['talkid'].url.trim();
+const MEETUP_URI = (group) =>
+  `https://api.meetup.com/${group}/events?page=100&status=past,upcoming`;
+
+export const meetupPlugin = async (route: string, config: RouteConfig) => {
+  const parts = route.split('/');
+  /** we just only handle the first param **/
+  const param = parts
+    .filter((p) => p.startsWith(':'))
+    .map((id) => id.slice(1))[0];
+  const url = MEETUP_URI(config[param].name).trim();
   const list = (await httpGetJson(url)) as any[];
   const { createPath } = routeSplit(route);
   const handledRoutes = [];
@@ -22,5 +31,4 @@ export const meetupPlugin = async (route, config) => {
   return handledRoutes.sort((a, b) => (a.date < b.date ? 1 : -1));
 };
 
-const validator = async (config) => [];
-registerPlugin('router', 'meetup', meetupPlugin, validator);
+registerPlugin('router', 'meetup', meetupPlugin);
