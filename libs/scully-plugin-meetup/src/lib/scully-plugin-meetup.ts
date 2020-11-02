@@ -28,7 +28,8 @@ export const meetupPlugin = async (route: string, config: RouteConfig) => {
       },
     });
   }
-  return handledRoutes.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  return handledRoutes.sort(config[param].sorting);
 };
 
 registerPlugin('router', 'meetup', meetupPlugin);

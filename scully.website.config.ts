@@ -45,6 +45,7 @@ export const config: ScullyConfig = {
       talkid: {
         name: 'Dutch-Angular-Group',
         property: 'id',
+        sorting: (a, b) => (a.date < b.date ? 1 : -1),
       },
     },
     '/docs/:slug': {
