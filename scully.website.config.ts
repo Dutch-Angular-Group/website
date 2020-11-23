@@ -1,10 +1,12 @@
 import '@dutchangulargroup/scully-plugin-meetup';
 import {
   getMyConfig,
-  registerPlugin,
+
+
+
+  prod, registerPlugin,
   ScullyConfig,
-  setPluginConfig,
-  prod,
+  setPluginConfig
 } from '@scullyio/scully';
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
 import { MinifyHtml } from 'scully-plugin-minify-html';
@@ -45,6 +47,8 @@ export const config: ScullyConfig = {
       talkid: {
         name: 'Dutch-Angular-Group',
         property: 'id',
+        amount: 100,
+        status: `past,upcoming`,
         sorting: (a, b) => (a.date < b.date ? 1 : -1),
       },
     },

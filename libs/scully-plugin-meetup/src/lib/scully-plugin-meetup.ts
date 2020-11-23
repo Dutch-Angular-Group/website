@@ -1,8 +1,8 @@
 import { httpGetJson, registerPlugin, routeSplit } from '@scullyio/scully';
 import { RouteConfig } from '@scullyio/scully/lib/routerPlugins';
 
-const MEETUP_URI = (group) =>
-  `https://api.meetup.com/${group}/events?page=100&status=past,upcoming`;
+const MEETUP_URI = (group, status, amount) =>
+  `https://api.meetup.com/${group}/events?page=${amount}&status=${status}`;
 
 export const meetupPlugin = async (route: string, config: RouteConfig) => {
   const parts = route.split('/');
@@ -10,7 +10,7 @@ export const meetupPlugin = async (route: string, config: RouteConfig) => {
   const param = parts
     .filter((p) => p.startsWith(':'))
     .map((id) => id.slice(1))[0];
-  const url = MEETUP_URI(config[param].name).trim();
+  const url = MEETUP_URI(config[param].name, config[param].status, config[param].amount).trim();
   const list = (await httpGetJson(url)) as any[];
   const { createPath } = routeSplit(route);
   const handledRoutes = [];
