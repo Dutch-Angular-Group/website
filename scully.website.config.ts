@@ -1,4 +1,4 @@
-import '@dutchangulargroup/scully-plugin-meetup';
+import 'scully-plugin-meetup';
 import {
   getMyConfig,
 
