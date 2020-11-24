@@ -32,6 +32,7 @@ export const config: ScullyConfig = {
   },
 };
 ```
+## Example of configuration
 
 The above example tells Scully to use the `meetup` plugin for fetching some the data via HTTP whenever it finds a route matching `/event/:eventId`.
 The Meetup plugin plucks the provided property name from each of the items and will generate static pages based on all of the events that are in the result.
@@ -55,8 +56,6 @@ export const config: ScullyConfig = {
   },
 };
 ```
-
-## Example of configuration propertys
 
 | Configuration property | Description                                              | Example values                                             |
 | ---------------------- | -------------------------------------------------------- | ---------------------------------------------------------- |
