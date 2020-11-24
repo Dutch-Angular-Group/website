@@ -1,12 +1,10 @@
 import 'scully-plugin-meetup';
 import {
   getMyConfig,
-
-
-
-  prod, registerPlugin,
+  prod,
+  registerPlugin,
   ScullyConfig,
-  setPluginConfig
+  setPluginConfig,
 } from '@scullyio/scully';
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
 import { MinifyHtml } from 'scully-plugin-minify-html';

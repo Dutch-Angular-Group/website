@@ -4,15 +4,18 @@ import { RouteConfig } from '@scullyio/scully/lib/routerPlugins';
 const MEETUP_URI = (group, status, amount) =>
   `https://api.meetup.com/${group}/events?page=${amount}&status=${status}`;
 
-export const meetupPlugin = async (route: string, config: RouteConfig) => {
-  const parts = route.split('/');
-  /** we just only handle the first param **/
-  const param = parts
-    .filter((p) => p.startsWith(':'))
-    .map((id) => id.slice(1))[0];
-  const url = MEETUP_URI(config[param].name, config[param].status, config[param].amount).trim();
+const defaultConfig = {
+  amount: 100,
+  status: `past,upcoming`,
+  sorting: (a, b) => (a.date < b.date ? 1 : -1),
+};
+export const meetupPlugin = async (route: string, routeConfig: RouteConfig) => {
+  const { createPath, params } = routeSplit(route);
+  const param = params[0].part;
+  const config = { ...defaultConfig, ...routeConfig[param] };
+  const url = MEETUP_URI(config.name, config.status, config.amount).trim();
   const list = (await httpGetJson(url)) as any[];
-  const { createPath } = routeSplit(route);
+
   const handledRoutes = [];
   for (let item of list) {
     handledRoutes.push({
@@ -29,7 +32,7 @@ export const meetupPlugin = async (route: string, config: RouteConfig) => {
     });
   }
 
-  return handledRoutes.sort(config[param].sorting);
+  return handledRoutes.sort(routeConfig[param].sorting);
 };
 
 registerPlugin('router', 'meetup', meetupPlugin);
