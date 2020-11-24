@@ -1,4 +1,24 @@
 {
   "name": "scully-plugin-meetup",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "maintainers": [
+    "Jeffrey Bosch <jefiozie.bosch@gmail.com> (https://jefiozie.github.io)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dutch-Angular-Group/website/tree/main/libs/scully-plugin-meetup"
+  },
+  "peerDependencies": {
+    "@scullyio/scully": "*"
+  },
+  "keywords": [
+    "angular",
+    "scully",
+    "meetup"
+  ],
+  "contributors": [
+    "Jeffrey Bosch <jefiozie.bosch@gmail.com> (https://jefiozie.github.io)"
+  ],
+  "author": "Jeffrey Bosch",
+  "license": "MIT"
 }
