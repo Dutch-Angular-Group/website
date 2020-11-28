@@ -21,9 +21,9 @@ jobs:
           node-version: ${{ matrix.node }}          
       - name: Install Dependencies
         run: npm install
-      - name: Symlink dist 🔗
-        run: npm run symlinks
       - name: Build it 👷🏻‍♂️
         run: npm run build
+      - name: Symlink dist 🔗
+        run: npm run symlinks        
       - name: Scully it ✨
         run: npm run scully -- --scanRoutes --prod

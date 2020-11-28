@@ -28,7 +28,7 @@
     "help": "nx help",
     "scully": "scully",
     "scully:serve": "scully serve",
-    "symlinks": "npx symlink-dir ./dist/libs ./node_modules/@dutchangulargroup"
+    "symlinks": "cd ./dist/libs/scully-plugin-meetup && npx symlink-dir . ./node_modules/scully-plugin-meetup"
   },
   "private": true,
   "dependencies": {
