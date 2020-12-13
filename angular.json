@@ -24,7 +24,9 @@
               "apps/website/src/favicon.ico",
               "apps/website/src/assets"
             ],
-            "styles": ["apps/website/src/styles.scss"],
+            "styles": [
+              "apps/website/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -82,7 +84,10 @@
               "apps/website/tsconfig.app.json",
               "apps/website/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/website/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/website/**/*"
+            ]
           }
         },
         "test": {
@@ -90,7 +95,10 @@
           "options": {
             "jestConfig": "apps/website/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/website"
+          ]
         }
       }
     },
@@ -115,8 +123,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/website-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/website-e2e/**/*"]
+            "tsConfig": [
+              "apps/website-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/website-e2e/**/*"
+            ]
           }
         }
       }
@@ -145,7 +158,10 @@
           "options": {
             "jestConfig": "libs/scully-plugin-meetup/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/libs/scully-plugin-meetup"
+          ]
         },
         "build": {
           "builder": "@nrwl/node:package",
@@ -154,8 +170,13 @@
             "tsConfig": "libs/scully-plugin-meetup/tsconfig.lib.json",
             "packageJson": "libs/scully-plugin-meetup/package.json",
             "main": "libs/scully-plugin-meetup/src/index.ts",
-            "assets": ["libs/scully-plugin-meetup/*.md"]
-          }
+            "assets": [
+              "libs/scully-plugin-meetup/*.md"
+            ]
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         }
       }
     }
