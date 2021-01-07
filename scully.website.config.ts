@@ -24,8 +24,8 @@ registerPlugin('render', GoogleAnalytics, googleAnalyticsPlugin);
 
 const prodPostRenders = ['seoHrefOptimise', MinifyHtml, GoogleAnalytics];
 const defaultPostRenderers = prod
-  ? [...prodPostRenders, criticalCSS]
-  : [criticalCSS];
+  ? [...prodPostRenders]
+  : [];
 
 // Markdown
 setPluginConfig('md', {});
