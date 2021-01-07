@@ -1,13 +1,22 @@
-import 'scully-plugin-meetup';
 import {
+  findPlugin,
   getMyConfig,
+  HandledRoute,
+  log,
   prod,
   registerPlugin,
   ScullyConfig,
   setPluginConfig,
+  yellow
 } from '@scullyio/scully';
 import { criticalCSS } from '@scullyio/scully-plugin-critical-css';
+import { scullySystem } from '@scullyio/scully/lib/pluginManagement/pluginRepository';
+import { puppeteerRender } from '@scullyio/scully/lib/renderPlugins/puppeteerRenderPlugin';
+import 'scully-plugin-meetup';
 import { MinifyHtml } from 'scully-plugin-minify-html';
+
+
+
 
 // Configurations
 export const GoogleAnalytics = 'googleAnalytics';
@@ -15,8 +24,8 @@ registerPlugin('render', GoogleAnalytics, googleAnalyticsPlugin);
 
 const prodPostRenders = ['seoHrefOptimise', MinifyHtml, GoogleAnalytics];
 const defaultPostRenderers = prod
-  ? [...prodPostRenders, criticalCSS]
-  : [criticalCSS];
+  ? [...prodPostRenders]
+  : [];
 
 // Markdown
 setPluginConfig('md', {});
@@ -48,6 +57,9 @@ export const config: ScullyConfig = {
         amount: 100,
         status: `past,upcoming`,
         sorting: (a, b) => (a.date < b.date ? 1 : -1),
+      },
+      preRenderer: (h: HandledRoute) => {
+        h.renderPlugin = renderOnce;
       },
     },
     '/docs/:slug': {
@@ -81,3 +93,16 @@ async function googleAnalyticsPlugin(html: string): Promise<string> {
 
   return html.replace(/<\/head/i, `${googleAnalyticsScript}</head`);
 }
+
+//libs/scully/src/lib/renderPlugins/puppeteerRenderPlugin.ts
+export const renderOnce = Symbol('renderOnce');
+const render = findPlugin(puppeteerRender);
+const cache = new Map<any, Promise<string>>();
+
+registerPlugin(scullySystem, renderOnce, (route: any, config) => {
+  if (!cache.has(config)) {
+    cache.set(config, render(route, config));
+  }
+  log(`Cache used for "${yellow(route.route)}"`)
+  return cache.get(config);
+});
