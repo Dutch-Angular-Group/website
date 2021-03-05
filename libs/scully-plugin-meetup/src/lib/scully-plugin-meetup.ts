@@ -1,5 +1,5 @@
 import { httpGetJson, registerPlugin, routeSplit } from '@scullyio/scully';
-import { RouteConfig } from '@scullyio/scully/lib/routerPlugins';
+import { RouteConfig } from '@scullyio/scully/src/lib/routerPlugins';
 
 const MEETUP_URI = (group, status, amount) =>
   `https://api.meetup.com/${group}/events?page=${amount}&status=${status}`;

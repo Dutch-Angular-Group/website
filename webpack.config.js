@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 
 module.exports = (config) => {
   const isProd = config.mode === 'production';
-  const tailwindConfig = require('./tailwind.config.js')(isProd);
+  const tailwindConfig = require('./custom_tailwind.config.js')(isProd);
 
   return merge(config, {
     module: {
