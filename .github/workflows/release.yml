@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "0 13 * * 1"
   repository_dispatch:
-    types: 
+    types:
       - event_automation
   push:
     branches:
@@ -25,7 +25,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node }}          
+          node-version: ${{ matrix.node }}
       - name: Install Dependencies
         run: npm install
       - name: Symlink dist 🔗
@@ -33,7 +33,10 @@ jobs:
       - name: Build it 👷🏻‍♂️
         run: npm run build
       - name: Scully it ✨
+        env: # Or as an environment variable
+          customerKey: ${{ secrets.CUSTOMERKEY }}
         run: npm run scully -- --scanRoutes --prod
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
