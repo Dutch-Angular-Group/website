@@ -40,10 +40,11 @@
     "@angular/platform-browser": "10.1.3",
     "@angular/platform-browser-dynamic": "10.1.3",
     "@angular/router": "10.1.3",
+    "@herodevs/scully-plugin-the-vault": "0.0.4",
     "@ngneat/tailwind": "^1.0.1",
     "@nrwl/angular": "11.0.2",
-    "@scullyio/ng-lib": "^1.0.0",
-    "@scullyio/scully": "^1.0.3",
+    "@scullyio/ng-lib": "^1.1.0",
+    "@scullyio/scully-plugin-local-cache": "0.1.0-BETA.61147",
     "rxjs": "~6.5.5",
     "zone.js": "^0.10.2"
   },
@@ -62,6 +63,7 @@
     "@nrwl/tao": "11.0.2",
     "@nrwl/workspace": "11.0.2",
     "@scullyio/init": "^1.0.1",
+    "@scullyio/scully": "^1.1.0",
     "@scullyio/scully-plugin-critical-css": "0.0.2",
     "@types/jest": "26.0.8",
     "@types/node": "12.12.38",
@@ -83,6 +85,6 @@
     "ts-jest": "26.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "4.0.3"
+    "typescript": "3.9.9"
   }
 }
